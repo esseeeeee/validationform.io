@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Website Design Buttons</title> 
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          color: #333;
+          transition: background-color 0.5s, color 0.5s;
+        }
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #04ecf8;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+          padding: 10px 20px;
+          margin: 5px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        input {
+            background-color: yellowgreen;
+            font-size: larger;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        footer {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #868686;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+      </style> 
+</head>
+
+<body style="background-color: rgb(51, 51, 51); color: rgb(255, 255, 255);"> 
+  <div style="text-align: center;">
+      <h1>Mini Calculator</h1>
+  </div>
+
+  <div class="container">
+      <div style="text-align: center;">
+      <button onclick="toggleMode()">Dark Mode</button>
+      <button onclick="toggleMode()">Light Mode</button>
+      <button onclick="increaseFontSize()">Increase Font Size</button>
+      <button onclick="decreaseFontSize()">Decrease Font Size</button>
+      <hr>
+      <input type="text" id="display" disabled="">
+  </div>
+      <div style="text-align: center;">
+        <button onclick="addToDisplay(1)">1</button>
+        <button onclick="addToDisplay(2)">2</button>
+        <button onclick="addToDisplay(3)">3</button>
+        <button onclick="addToDisplay('+')">+</button>
+      </div>
+      <div style="text-align: center;">
+        <button onclick="addToDisplay(4)">4</button>
+        <button onclick="addToDisplay(5)">5</button>
+        <button onclick="addToDisplay(6)">6</button>
+        <button onclick="addToDisplay('-')">-</button>
+      </div>
+      <div style="text-align: center;">
+        <button onclick="addToDisplay(7)">7</button>
+        <button onclick="addToDisplay(8)">8</button>
+        <button onclick="addToDisplay(9)">9</button>
+        <button onclick="addToDisplay('*')">*</button>
+      </div>
+      <div style="text-align: center;">
+      <button onclick="clearDisplay()">C</button>
+        <button onclick="addToDisplay(0)">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="addToDisplay('/')">/</button>
+      </div>
+    </div>
+
+<script>
+  let fontSize = 16;
+  let darkMode = false;
+
+  function toggleMode() {
+    const body = document.body;
+    darkMode = !darkMode;
+    if (darkMode) {
+      body.style.backgroundColor = "#333";
+      body.style.color = "#fff";
+    } else {
+      body.style.backgroundColor = "#f0f0f0";
+      body.style.color = "#333";
+    }
+  }
+
+  function increaseFontSize() {
+    fontSize += 2;
+    document.body.style.fontSize = fontSize + "px";
+  }
+
+  function decreaseFontSize() {
+    if (fontSize > 8) {
+      fontSize -= 2;
+      document.body.style.fontSize = fontSize + "px";
+    }
+  }
+
+  function addToDisplay(value) {
+    document.getElementById("display").value += value;
+  }
+
+  function clearDisplay() {
+    document.getElementById("display").value = "";
+  }
+
+  function calculate() {
+    const display = document.getElementById("display");
+    try {
+      display.value = eval(display.value);
+    } catch (error) {
+      display.value = "Error";
+    }
+  }
+</script>
+
+<footer>
+<div style="text-align: center;">
+  <br>
+  <p1>© <a style="text-decoration: none;" href="https://www.facebook.com/mansyanitas">Ashton N. Ruiz</a></p1>
+  <br>
+</div>
+</footer>
+
+
+
+</body>
